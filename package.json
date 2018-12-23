@@ -1,0 +1,32 @@
+{
+  "name": "cdm_launcher",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "nodemon --exec babel-node src/index.js",
+    "build": "babel src/index.js -o dist/index.js && pkg dist/index.js --targets node10-win-x64 --output build/CDM_Uploader.exe && npm run copy",
+    "copy": "cp src/CDM_Launcher.bat build",
+    "compress": "jszip -o build/CDM_Launcher.zip build/*"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-transform-async-to-generator": "^7.2.0",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.2.3",
+    "babel-core": "^6.26.3",
+    "babel-watch": "^2.0.7",
+    "colors": "^1.3.3",
+    "node-fetch": "^2.3.0",
+    "pkg": "^4.3.5",
+    "prompts": "^2.0.0",
+    "regenerator-runtime": "^0.13.1"
+  },
+  "devDependencies": {
+    "bestzip": "^2.1.2"
+  }
+}
