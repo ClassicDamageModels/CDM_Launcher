@@ -7,5 +7,5 @@ Uploads data gathered with `VF_RealmPlayersTBC` addon to be available from [armo
 1. Install `VF_RealmPlayersTBC` addon from [here](https://github.com/ClassicDamageModels/RealmPlayers-Addons).
 2. Inspect people (targeting is enough)
 3. Download [CDM_Launcher.zip](https://github.com/ClassicDamageModels/CDM_Launcher) and extract it inside your WoW folder. (Alternatively you can build the launcher from the source)
-4 Ask for an API key from the developers at [our Discord](https://discord.gg/pnVEYu4)
+4. Ask for an API key from the developers at [our Discord](https://discord.gg/pnVEYu4)
 5. Launch `CDM_Launcher.bat` to first upload and then start the game.
