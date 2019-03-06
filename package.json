@@ -1,13 +1,13 @@
 {
-  "name": "cdm_launcher",
+  "name": "Uploader",
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "watch": "nodemon --exec babel-node src/index.js",
-    "build": "babel src/index.js -o dist/index.js && pkg dist/index.js --targets node10-win-x64 --output build/CDM_Uploader.exe && npm run copy",
-    "copy": "cp src/CDM_Launcher.bat build",
-    "compress": "jszip -o build/CDM_Launcher.zip build/*"
+    "build": "babel src/index.js -o dist/index.js && pkg dist/index.js --targets node10-win-x64 --output build/Uploader.exe && npm run copy",
+    "copy": "cp src/Launcher.bat build",
+    "compress": "jszip -o build/Uploader.zip build/*"
   },
   "author": "",
   "license": "MIT",

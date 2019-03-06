@@ -1,11 +1,10 @@
-# CDS Launcher
+# Uploader
 
-Uploads data gathered with `VF_RealmPlayersTBC` addon to be available from [armory](https://github.com/ClassicDamageSheets) and through out the Classic Damage Models project.
+Uploads data gathered with `Inpsector` addon to be available from [armory](https://github.com/ClassicDamageSheets/armory) and through out the Classic Damage Sheets project.
 
 # Usage
 
-1. Install `VF_RealmPlayersTBC` addon from [here](https://github.com/ClassicDamageSheets/RealmPlayers-Addons).
+1. Install `Inspector` addon from [here](https://github.com/ClassicDamageSheets/Inspector).
 2. Inspect people (targeting is enough)
-3. Download [CDS_Launcher.zip](https://github.com/ClassicDamageSheets/CDS_Launcher) and extract it inside your WoW folder. (Alternatively you can build the launcher from the source)
-4. Ask for an API key from the developers at [our Discord](https://discord.gg/pnVEYu4)
-5. Launch `CDM_Launcher.bat` to first upload and then start the game.
+3. Download the [Uploader](https://github.com/ClassicDamageSheets/Uploader) and extract it inside your WoW folder. (Alternatively you can build the uploader from the source)
+4. Run `Launcher.bat` to first upload your data and then start the game or run Uploader.exe separately.

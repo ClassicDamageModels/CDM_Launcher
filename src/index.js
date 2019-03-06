@@ -6,8 +6,8 @@ import colors from 'colors'
 import { promisify } from 'util'
 import fetch from 'node-fetch'
 
-const CDM_CONFIG_FILE_NAME = 'CDM_Launcher.config.json';
-const CDM_ARMORY_URL = 'http://armory.theorycraft.fi'
+const CDS_CONFIG_FILE_NAME = 'Uploader.config.json';
+const CDS_ARMORY_URL = 'http://armory.theorycraft.fi'
 
 ;(async () => {
   const read = promisify(fs.readFile, "utf8")
@@ -15,7 +15,7 @@ const CDM_ARMORY_URL = 'http://armory.theorycraft.fi'
   const unlink = promisify(fs.unlink)
 
   try {
-    await read(CDM_CONFIG_FILE_NAME)
+    await read(CDS_CONFIG_FILE_NAME)
   } catch(err) {
     console.log('Couldn\'t find the config file, it seems that this is your first time...'.green)
     const config = await prompts([{
@@ -41,8 +41,8 @@ const CDM_ARMORY_URL = 'http://armory.theorycraft.fi'
       message: 'Finally enter the API key that you got from our developers on Discord'
     }])
     try {
-      await write(CDM_CONFIG_FILE_NAME, JSON.stringify(config))
-      console.log(`Wrote config to file "${CDM_CONFIG_FILE_NAME}".`)
+      await write(CDS_CONFIG_FILE_NAME, JSON.stringify(config))
+      console.log(`Wrote config to file "${CDS_CONFIG_FILE_NAME}".`)
     } catch(err) {
       console.error('Failed to write to file.'.red)
     }
@@ -50,18 +50,18 @@ const CDM_ARMORY_URL = 'http://armory.theorycraft.fi'
 
 
   try {
-    const buffer = await read(CDM_CONFIG_FILE_NAME)
+    const buffer = await read(CDS_CONFIG_FILE_NAME)
     const config = JSON.parse(buffer.toString())
     console.log('Found config file...'.green)
 
-    const filePath = `${config.path}/WTF/Account/${config.account}/SavedVariables/VF_RealmPlayersTBC.lua`
+    const filePath = `${config.path}/WTF/Account/${config.account}/SavedVariables/Inspector.lua`
 
     try {
       const lua = await read(filePath)
       const luaString = lua.toString()
 
       try {
-        const response = await fetch(`${CDM_ARMORY_URL}/upload?key=${config.key}`, {
+        const response = await fetch(`${CDS_ARMORY_URL}/upload?key=${config.key}`, {
           method: 'POST',
           body: lua.toString()
         }).then(res => {
